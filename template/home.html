@@ -1,0 +1,28 @@
+<!--
+	作者：244709369@qq.com
+	时间：2016-12-16
+	描述：
+-->
+<ion-view title="'Home'">
+	<ion-header-bar align-title = 'center' class = 'bar-positive'>
+		<h1 class="title title-center">Home!</h1>
+		<div class="buttons"><button class="button">右侧按钮</button></div>
+	</ion-header-bar>
+	<ion-content>
+		<ion-slide-box style='height:200px'>
+			<ion-slide ng-repeat="item in views.slideData track by $index">
+				<div class="box">
+					<img style="width: 100%;height: 100%;" ng-src="{{ item.img }}" />
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+		<ion-list>
+			<ion-item ng-repeat = 'item in views.listData track by $index' ng-click='views.goDetail(item.activity)'>
+				<p>{{ item.activity.name }}</p>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+	<ion-footer-bar align-title='center' class='bar-positive'>
+		<h1 class="title title-center">底部！</h1>
+	</ion-footer-bar>
+</ion-view>
